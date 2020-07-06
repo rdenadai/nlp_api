@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  hook:
+    container_name: nlp_api
+    hostname: nlp_api
+    build: .
+    restart: always
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./:/workspace
+      - $PWD/logs/:/var/log/
+    network_mode: host
