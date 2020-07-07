@@ -4,9 +4,9 @@ ADD init.sh /init.sh
 
 WORKDIR /workspace
 
-COPY requirements.txt ./
+COPY src/requirements.txt ./
 
-COPY settings.ini ./
+COPY src/settings.ini ./
 
 RUN apt-get install -y tzdata
 

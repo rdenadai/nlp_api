@@ -8,6 +8,6 @@ services:
     ports:
       - "8787:8787"
     volumes:
-      - ./:/workspace
+      - ./src/:/workspace
       - $PWD/logs/:/var/log/
     network_mode: host
