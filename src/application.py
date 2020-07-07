@@ -6,10 +6,10 @@ app = FastAPI()
 
 
 @app.get("/")
-def index():
+async def index():
     return {"Working": True}
 
 
 @app.post("/parser/")
-def parser_phrase(phrase: str):
+async def parser_phrase(phrase: str):
     return parser(phrase)
