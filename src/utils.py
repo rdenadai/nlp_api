@@ -42,19 +42,19 @@ def parser(phrase):
         phrase = remover_acentos(phrase.lower())
         for punkt in punctuation:
             phrase = phrase.replace(punkt, " ")
-    for word in word_tokenize(phrase):
-        if not is_number(word) and len(word) > 0:
-            token = NLP_PARSER(word)[0]
-            info.append(
-                {
-                    "word": word,
-                    "stem_rslp": RSLP_STEMMER.stem(word),
-                    "stem_snowball": SNOWBALL_STEMMER.stem(word),
-                    "lemma": token.lemma_,
-                    "type": token.pos_,
-                    "is_stopword": token.is_stop,
-                }
-            )
+
+    for token in NLP_PARSER(phrase):
+        word = token.text
+        info.append(
+            {
+                "word": word,
+                "stem_rslp": RSLP_STEMMER.stem(word),
+                "stem_snowball": SNOWBALL_STEMMER.stem(word),
+                "lemma": token.lemma_,
+                "type": token.pos_,
+                "is_stopword": token.is_stop,
+            }
+        )
     return info
 
 
