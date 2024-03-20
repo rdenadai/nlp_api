@@ -1,4 +1,4 @@
-black==19.10b0
+black==24.3.0
 python-decouple==3.3
 nltk==3.6.6
 spacy==2.2.4
